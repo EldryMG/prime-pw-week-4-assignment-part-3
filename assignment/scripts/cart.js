@@ -5,10 +5,10 @@ let basket = [];
 const maxItems = 5
 
 // 1. addItem function and isFull function:
-function addItem(item) {
+function addItem(item) {   //Is this the best way to format this loop?
   basket.push(item);
   isFull();
-  return true;
+  return true;             //What is the intented purpose of adding the return statement? Is it a way to guarantee we get out of the function?
 }
 
 console.log(addItem('cake')); // Adds item.
@@ -37,15 +37,13 @@ function empty() {
 
 }
 // Stretch
-function isFull() {
-  for (i = 0; i < basket.length; i++) {
+function isFull() {     
     if (basket.length <= maxItems) {
       console.log(`${basket} in basket.`)
       return false;
     } else {
-      basket.pop(i);
+      basket.pop();
       console.log(`Too many items.`)
       return true;
     }
-  }
 }
