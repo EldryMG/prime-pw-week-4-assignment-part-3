@@ -4,29 +4,22 @@ console.log('***** Cart Functions *****');
 let basket = [];
 const maxItems = 5
 
-
+// 1. addItem function and isFull function:
 function addItem(item) {
   basket.push(item);
   isFull();
   return true;
 }
 
-console.log('Adding almonds (expect true)', addItem('almonds'));
-console.log('Adding cheese (expect true)', addItem('cheese'));
-
-console.log(`Adding coffee`, addItem(`coffee`));
-console.log('Adding steak (expect true)', addItem('steak'));
-console.log('Adding soda (expect true)', addItem('soda'));
-console.log(`Adding sushi bowl to basket`, addItem(`sushi bowl`));
-console.log(`The basket has ${listItems(basket)} in it.`);
-empty();
-console.log(addItem('cake'));
-console.log(addItem('juice'));
-console.log(addItem('granola bar'));
-console.log(addItem('pie'));
+console.log(addItem('cake')); // Adds item.
+console.log(addItem('juice')); // Adds item.
+console.log(addItem('granola bar')); // Adds item.
+console.log(addItem('pie')); // Adds item.
 console.log(addItem('pizza')); // Adds item.
-console.log(addItem('hot pockets')); // function isFull() returns true and keeps item out.
+console.log(addItem('tea')); // isFull function prevents 6th item from being added and messages "Too many items."
 
+
+// 2. listItems function:
 function listItems(anArray) {
   for (i = 0; i < anArray.length; i++) {
     console.log(i, anArray[i]);
@@ -34,9 +27,11 @@ function listItems(anArray) {
   return `Basket has ${anArray.length} items`
 }
 
+console.log(listItems(basket));
 
 
 
+// 3. empty function.
 function empty() {
   return basket = [];
 
